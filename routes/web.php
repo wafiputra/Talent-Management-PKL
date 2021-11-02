@@ -26,6 +26,8 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('users', 'UserController');
     Route::resource('products', 'ProductController');
     Route::resource('bidang', 'BidangController');
+    Route::resource('client', 'ClientController');
+    Route::resource('jabatan', 'JabatanController');
 });
 
 Route::post('users', 'UserController@stor')

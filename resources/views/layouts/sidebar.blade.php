@@ -38,8 +38,8 @@
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-users"></i></i> <span>Master Data</span></a>
                 <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="{{ url('/dataclient') }}">Data Client</a></li>
-                    <li><a class="nav-link beep beep-sidebar" href="{{ url('/datajabatan') }}">Data Jabatan</a></li>
+                    <li><a class="nav-link" href="{{ route('client.index') }}">Data Client</a></li>
+                    <li><a class="nav-link beep beep-sidebar" href="{{ route('jabatan.index') }}">Data Jabatan</a></li>
                     {{-- @can('user-list') --}}
                     <li><a class="nav-link" href="{{ route('users.index') }}">Data Pengguna</a></li>
                     {{-- @endcan --}}

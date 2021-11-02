@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 
 @section('content')
@@ -51,10 +51,10 @@
 
 {!! $roles->render() !!}
 
-@endsection
+@endsection --}}
 
 
-{{-- @extends('master')
+@extends('master')
 
 
 @section('content')
@@ -123,11 +123,11 @@
                                             <i class="far fa-edit"></i>
                                         </a>
                                         @endcan
-                                        @can('role-delete') --}}
-                                        {{-- <a href="#" class="btn btn-danger custom-btn">
+                                        @can('role-delete')
+                                        <a href="#" class="btn btn-danger custom-btn">
                                             <i class="far fa-trash-alt"></i>
-                                        </a> --}}
-                                        {{-- {!! Form::open(['method' => 'DELETE','route' => ['roles.destroy', $role->id],'style'=>'display:inline']) !!}
+                                        </a>
+                                        {!! Form::open(['method' => 'DELETE','route' => ['roles.destroy', $role->id],'style'=>'display:inline']) !!}
                                             {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                                         {!! Form::close() !!}
                                         @endcan
@@ -150,4 +150,4 @@
 
 {!! $roles->render() !!}
 
-@endsection --}}
+@endsection
