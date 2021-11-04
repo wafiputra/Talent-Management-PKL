@@ -26,10 +26,9 @@ class DataPController extends Controller
      */
     public function index()
     {
-        // $bidang = DataP::latest()->paginate(5);
-        return view('managemenProyek.dataProyek.index');
-        // , compact('bidang')
-        //     ->with('i', (request()->input('page', 1) - 1) * 5);
+        $dataP = DataP::latest()->paginate(5);
+        return view('managemenProyek.dataProyek.index', compact('dataP'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     // /**
