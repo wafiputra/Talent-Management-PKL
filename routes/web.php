@@ -33,6 +33,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('signProject', 'SignPController');
     Route::resource('targetPembelajaran', 'TargetPController');
     Route::resource('realisasiPembelajaran', 'RealisasiPController');
+    Route::resource('dataPendidikan', 'DataPendidikanController');
+    Route::resource('dataPersonil', 'DataPersonilController');
+    Route::resource('dataSkill', 'DataSkillController');
+    Route::resource('dataKontrak', 'DataKontrakController');
+    Route::resource('portofolio', 'PortofolioController');
 });
 
 Route::post('users', 'UserController@stor')

@@ -1,0 +1,139 @@
+@extends('master')
+@section('content')
+<section class="section">
+    <div class="section-header">
+        <h1>Data Pendidikan</h1>
+        <div class="section-header-breadcrumb">
+            <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
+            <div class="breadcrumb-item"><a href="#">Bootstrap Components</a></div>
+            <div class="breadcrumb-item">Form</div>
+        </div>
+    </div>
+
+</section>
+<div class="section-body">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Table Data Pendidikan</h4>
+                    <div class="card-header-action">
+                        <form>
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-primary"><i class="fas fa-search"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        <table class="table table-striped" id="sortable-table">
+                            <thead>
+                                <tr>
+
+                                    <th>Nama</th>
+                                    <th>SD</th>
+                                    <th>SMP</th>
+                                    <th>SMA</th>
+                                    <th>Kuliah</th>
+                                    <th class="w-1">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td data-label="Nama">
+                                        <div class="d-flex py-1 align-items-center">
+                                            <!-- <span class="avatar me-2" style="background-image: url(./static/avatars/010m.jpg)"></span> -->
+                                            <div class="flex-fill">
+                                                <div class="font-weight-medium">Thatcher Keel</div>
+                                                <!-- <div class="text-muted"><a href="#" class="text-reset">tkeelf@blogger.com</a></div> -->
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-label="SD">
+
+                                        <div class="font-weight-medium">SD 1 Purwokerto</div>
+                                    </td>
+                                    <td data-label="SMP">
+
+                                        <div class="font-weight-medium">SMP 1 Purwokerto</div>
+                                    </td>
+                                    <td data-label="SMA">
+
+                                        <div class="font-weight-medium">SMA 1 Purwokerto</div>
+                                    </td>
+                                    <td data-label="Kuliah">
+
+                                        <div class="font-weight-medium">IT Telkom Purwokerto </div>
+                                    </td>
+
+                                    <td>
+
+                                        <div class="btn-list flex-nowrap">
+                                            <a href="#" class="btn btn-success custom-btn">
+                                                <i class="far fa-edit"></i>
+                                            </a>
+                                            <a href="#" class="btn btn-danger custom-btn">
+                                                <i class="far fa-trash-alt"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td data-label="Nama">
+                                        <div class="d-flex py-1 align-items-center">
+                                            <!-- <span class="avatar me-2" style="background-image: url(./static/avatars/010m.jpg)"></span> -->
+                                            <div class="flex-fill">
+                                                <div class="font-weight-medium">Thatcher Keel</div>
+                                                <!-- <div class="text-muted"><a href="#" class="text-reset">tkeelf@blogger.com</a></div> -->
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td data-label="SD">
+
+                                        <div class="font-weight-medium">SD 1 Purwokerto</div>
+                                    </td>
+                                    <td data-label="SMP">
+
+                                        <div class="font-weight-medium">SMP 1 Purwokerto</div>
+                                    </td>
+                                    <td data-label="SMA">
+
+                                        <div class="font-weight-medium">SMA 1 Purwokerto</div>
+                                    </td>
+                                    <td data-label="Kuliah">
+
+                                        <div class="font-weight-medium">IT Telkom Purwokerto </div>
+                                    </td>
+
+                                    <td>
+
+                                        <div class="btn-list flex-nowrap">
+                                            <a href="#" class="btn btn-success custom-btn">
+                                                <i class="far fa-edit"></i>
+                                            </a>
+                                            <a href="#" class="btn btn-danger custom-btn">
+                                                <i class="far fa-trash-alt"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                        <div class="card-footer text-center">
+                            <button class="btn btn-primary">Tambah</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@endsection

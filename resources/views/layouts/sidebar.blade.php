@@ -52,11 +52,11 @@
             <li class="nav-item dropdown">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-users"></i></i> <span>Talent Management</span></a>
                 <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="{{ url('/datapersonil') }}">Data Personil</a></li>
-                    <li><a class="nav-link beep beep-sidebar" href="{{ url('/datakontrak') }}">Data Kontrak</a></li>
-                    <li><a class="nav-link" href="{{ url('/datapendidikan') }}">Data Pendidikan</a></li>
-                    <li><a class="nav-link beep beep-sidebar" href="{{ url('/dataskill') }}">Data Skills</a></li>
-                    <li><a class="nav-link beep beep-sidebar" href="{{ url('/portofolio') }}">Portofolio</a></li>
+                    <li><a class="nav-link" href="{{ route('dataPersonil.index') }}">Data Personil</a></li>
+                    <li><a class="nav-link beep beep-sidebar" href="{{ route('dataKontrak.index') }}">Data Kontrak</a></li>
+                    <li><a class="nav-link" href="{{ route('dataPendidikan.index') }}">Data Pendidikan</a></li>
+                    <li><a class="nav-link beep beep-sidebar" href="{{ route('dataSkill.index') }}">Data Skills</a></li>
+                    <li><a class="nav-link beep beep-sidebar" href="{{ route('portofolio.index') }}">Portofolio</a></li>
                 </ul>
             </li>
             <li class="nav-item ">
