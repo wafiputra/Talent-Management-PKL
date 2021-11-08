@@ -54,7 +54,7 @@
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" value="{{ $client->Email }}" class="form-control" required="">
+                    <input type="email" value="{{ $client->email }}" class="form-control" required="">
                 </div>
                 <div class="form-group">
                     <label>Projek</label>

@@ -53,7 +53,7 @@ class ClientController extends Controller
             'kecamatan' => 'required',
             'provinsi' => 'required',
             'telepon' => 'required',
-            'Email' => 'required',
+            'email' => 'required',
             'project' => 'required',
         ]);
         //var_dump($request);
@@ -72,7 +72,7 @@ class ClientController extends Controller
             'kecamatan' => 'required',
             'provinsi' => 'required',
             'telepon' => 'required',
-            'Email' => 'required',
+            'email' => 'required',
             'project' => 'required',
         ]);
 

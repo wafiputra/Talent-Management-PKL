@@ -55,7 +55,7 @@
                                     <td>{{ $c->kecamatan }}</td>
                                     <td>{{ $c->provinsi }}</td>
                                     <td>{{ $c->telepon }}</td>
-                                    <td>{{ $c->Email }}</td>
+                                    <td>{{ $c->email }}</td>
                                     <td>{{ $c->project }}</td>
                                     <td>
                                         <form action="{{ route('client.destroy',$c->id) }}" method="POST">

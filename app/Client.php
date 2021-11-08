@@ -14,7 +14,7 @@ class Client extends Model
         'kecamatan',
         'provinsi',
         'telepon',
-        'Email',
+        'email',
         'project'
     ];
 }

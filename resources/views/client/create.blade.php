@@ -32,7 +32,7 @@
                 </div>
                 <div class="form-group">
                     <label>Kabupaten/kota</label>
-                    <select class="form-control" name="kecamatan">
+                    <select class="form-control" name="kabupaten">
                         <option>Pilih kabupaten/Kota</option>
                         <option value="banyumas">Kab.Banyumas</option>
                         <option value="tegal">Kab.Tegal</option>
@@ -54,7 +54,7 @@
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" name="Email" class="form-control" required>
+                    <input type="email" name="email" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label>Projek</label>

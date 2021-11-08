@@ -51,9 +51,9 @@ class DataKontrakController extends Controller
      public function store(Request $request)
      {
          request()->validate([
-             'nama' => 'required',
-             'kategori' => 'required',
-             'keterangan' => 'required',
+             'idkontrak' => 'required',
+             'dokumentasi' => 'required',
+             'tanggalmasuk' => 'required',
          ]);
 
          Bidang::create($request->all());

@@ -33,11 +33,10 @@
                         <table class="table table-striped" id="sortable-table">
                             <thead>
                                 <tr>
-
                                     <th>Nama</th>
+                                    <th>dokumen</th>
                                     <th>Mulai</th>
                                     <th>Selesai</th>
-
                                     <th class="w-1">Action</th>
                                 </tr>
                             </thead>
@@ -53,17 +52,12 @@
                                         </div>
                                     </td>
                                     <td data-label="Mulai">
-
                                         <div class="font-weight-medium">3 juni 2020</div>
                                     </td>
                                     <td data-label="Selesai">
-
                                         <div class="font-weight-medium">3 juli 2020</div>
                                     </td>
-
-
                                     <td>
-
                                         <div class="btn-list flex-nowrap">
                                             <a href="#" class="btn btn-success custom-btn">
                                                 <i class="far fa-edit"></i>
@@ -74,7 +68,6 @@
                                         </div>
                                     </td>
                                 </tr>
-
                                 <tr>
                                     <td data-label="Nama">
                                         <div class="d-flex py-1 align-items-center">
@@ -86,17 +79,12 @@
                                         </div>
                                     </td>
                                     <td data-label="Mulai">
-
                                         <div class="font-weight-medium">3 juni 2020</div>
                                     </td>
                                     <td data-label="Selesai">
-
                                         <div class="font-weight-medium">3 juli 2020</div>
                                     </td>
-
-
                                     <td>
-
                                         <div class="btn-list flex-nowrap">
                                             <a href="#" class="btn btn-success custom-btn">
                                                 <i class="far fa-edit"></i>

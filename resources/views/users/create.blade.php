@@ -79,7 +79,7 @@ window.addEventListener('DOMContentLoaded', function() {
                 </div>
                 <div class="form-group">
                     <label>No.Telpon</label>
-                    <input type="email" class="form-control">
+                    <input type="text" class="form-control">
                 </div>
                 <div class="form-group">
                     <label>Email</label>
@@ -87,7 +87,7 @@ window.addEventListener('DOMContentLoaded', function() {
                 </div>
                 <div class="form-group">
                     <label>Projek</label>
-                    <input type="email" class="form-control">
+                    <input type="text" class="form-control">
                 </div>
             </div>
             <div class="card-footer text-center">
