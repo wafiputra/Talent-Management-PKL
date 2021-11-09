@@ -2,7 +2,7 @@
     <aside id="sidebar-wrapper">
         <br>
         <div class="sidebar-brand">
-            <img alt="image" src="../assets/img/avatar/reksa.png" class=" mx-auto d-block " width="100" height="60">
+            <img alt="image" src="{{ asset('assets/img/avatar/reksa.png') }}" class=" mx-auto d-block " width="100" height="60">
         </div>
 
         <ul class="sidebar-menu">

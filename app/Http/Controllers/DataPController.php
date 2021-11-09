@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DataP;
+use App\Client;
 use Illuminate\Http\Request;
 
 class DataPController extends Controller
@@ -31,15 +32,16 @@ class DataPController extends Controller
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
-    // /**
-    //  * Show the form for creating a new resource.
-    //  *
-    //  * @return \Illuminate\Http\Response
-    //  */
-    // public function create()
-    // {
-    //     return view('bidang.create');
-    // }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $client = Client::pluck('nama', 'id')->all();
+        return view('managemenProyek.dataProyek.create', compact('client'));
+    }
 
     // /**
     //  * Store a newly created resource in storage.

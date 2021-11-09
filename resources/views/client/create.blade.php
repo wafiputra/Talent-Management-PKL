@@ -31,15 +31,6 @@
                     <textarea name="alamat" class="form-control" required></textarea>
                 </div>
                 <div class="form-group">
-                    <label>Kabupaten/kota</label>
-                    <select class="form-control" name="kecamatan">
-                        <option>Pilih kabupaten/Kota</option>
-                        <option value="banyumas">Kab.Banyumas</option>
-                        <option value="tegal">Kab.Tegal</option>
-                        <option value="brebes">Kab.Brebes</option>
-                    </select>
-                </div>
-                <div class="form-group">
                     <label>Provinsi</label>
                     <select class="form-control" name="provinsi">
                         <option>Pilih Provinsi</option>
@@ -49,12 +40,21 @@
                     </select>
                 </div>
                 <div class="form-group">
+                    <label>Kabupaten/kota</label>
+                    <select class="form-control" name="kabupaten">
+                        <option>Pilih kabupaten/Kota</option>
+                        <option value="banyumas">Kab.Banyumas</option>
+                        <option value="tegal">Kab.Tegal</option>
+                        <option value="brebes">Kab.Brebes</option>
+                    </select>
+                </div>
+                <div class="form-group">
                     <label>No.Telpon</label>
                     <input type="text" name="telepon" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" name="Email" class="form-control" required>
+                    <input type="email" name="email" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label>Projek</label>
