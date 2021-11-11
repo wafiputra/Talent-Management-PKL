@@ -38,7 +38,7 @@
 </section>
 <div class="section-body">
     <div class="card">
-        <form action="{{ route('products.update',$product->id) }}" method="POST">
+        <form action="{{ route('jabatan.update') }}" method="POST">
             @csrf
             @method('PUT')
             <div class="card-header">
@@ -81,7 +81,7 @@
                 </div>
                 <div class="form-group">
                     <label>Minimum Experience</label>
-                    <input type="email" class="form-control" value="{{ $jabatan->minexp }}">
+                    <input type="email" class="form-control" value="{{ $jabatan->minimumexperience }}">
                 </div>
             </div>
             <div class="card-footer text-center">

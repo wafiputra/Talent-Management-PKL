@@ -26,10 +26,9 @@ class DataPController extends Controller
      */
     public function index()
     {
-        // $bidang = DataP::latest()->paginate(5);
-        return view('managemenProyek.dataProyek.index');
-        // , compact('bidang')
-        //     ->with('i', (request()->input('page', 1) - 1) * 5);
+        $bidang = DataP::latest()->paginate(5);
+        return view('managemenProyek.dataProyek.index'
+        , compact('bidang'))     ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     // /**
@@ -37,10 +36,10 @@ class DataPController extends Controller
     //  *
     //  * @return \Illuminate\Http\Response
     //  */
-    // public function create()
-    // {
-    //     return view('bidang.create');
-    // }
+     public function create()
+     {
+         return view('bidang.create');
+     }
 
     // /**
     //  * Store a newly created resource in storage.
@@ -48,20 +47,20 @@ class DataPController extends Controller
     //  * @param  \Illuminate\Http\Request  $request
     //  * @return \Illuminate\Http\Response
     //  */
-    // public function store(Request $request)
-    // {
-    //     request()->validate([
-    //         'nama' => 'required',
-    //         'kategori' => 'required',
-    //         'keterangan' => 'required',
-    //     ]);
+     public function store(Request $request)
+     {
+         request()->validate([
+             'nama' => 'required',
+             'kategori' => 'required',
+             'keterangan' => 'required',
+         ]);
 
-    //     Bidang::create($request->all());
+         DataP::create($request->all());
     //     // Alamat::create($request->);
 
-    //     return redirect()->route('bidang.index')
-    //         ->with('success', 'Bidang created successfully.');
-    // }
+         return redirect()->route('bidang.index')
+             ->with('success', 'Bidang created successfully.');
+     }
 
     // /**
     //  * Display the specified resource.
@@ -69,10 +68,10 @@ class DataPController extends Controller
     //  * @param  \App\Bidang  $bidang
     //  * @return \Illuminate\Http\Response
     //  */
-    // public function show(Bidang  $bidang)
-    // {
-    //     return view('bidang.show', compact('bidang'));
-    // }
+     public function show(DataP  $DataP)
+     {
+         return view('DataP.show', compact('DataP'));
+     }
 
     // /**
     //  * Show the form for editing the specified resource.
@@ -80,10 +79,10 @@ class DataPController extends Controller
     //  * @param  \App\Bidang  $bidang
     //  * @return \Illuminate\Http\Response
     //  */
-    // public function edit(Bidang  $bidang)
-    // {
-    //     return view('bidang.edit', compact('bidang'));
-    // }
+     public function edit(DataP  $bidang)
+     {
+         return view('bidang.edit', compact('bidang'));
+     }
 
     // /**
     //  * Update the specified resource in storage.
@@ -92,19 +91,19 @@ class DataPController extends Controller
     //  * @param  \App\Bidang  $bidang
     //  * @return \Illuminate\Http\Response
     //  */
-    // public function update(Request $request, Bidang  $bidang)
-    // {
-    //     request()->validate([
-    //         'nama' => 'required',
-    //         'kategori' => 'required',
-    //         'keterangan' => 'required',
-    //     ]);
+     public function update(Request $request, Bidang  $bidang)
+     {
+         request()->validate([
+             'nama' => 'required',
+             'kategori' => 'required',
+             'keterangan' => 'required',
+         ]);
 
-    //     $bidang->update($request->all());
+         $bidang->update($request->all());
 
-    //     return redirect()->route('bidang.index')
-    //         ->with('success', 'Bidang updated successfully');
-    // }
+         return redirect()->route('bidang.index')
+             ->with('success', 'Bidang updated successfully');
+     }
 
     // /**
     //  * Remove the specified resource from storage.
@@ -119,4 +118,4 @@ class DataPController extends Controller
     //     return redirect()->route('bidang.index')
     //         ->with('success', 'Bidang deleted successfully');
     // }
-}
+    }

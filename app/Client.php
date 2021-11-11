@@ -11,7 +11,7 @@ class Client extends Model
         'nama',
         'instansi',
         'alamat',
-        'kecamatan',
+        'kabupaten',
         'provinsi',
         'telepon',
         'email',

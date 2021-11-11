@@ -50,11 +50,12 @@ class JabatanController extends Controller
     public function store(Request $request)
     {
         request()->validate([
-            'name' => 'required',
-            'idparentjabatan' => 'required',
+            'jabatan' => 'required',
+            'idparent' => 'required',
             'parentjabatan' => 'required',
             'keterangan' => 'required',
-            'minexp' => 'required',        ]);
+            'minimumexperience' => 'required',        
+        ]);
 
         Jabatan::create($request->all());
 
@@ -91,13 +92,14 @@ class JabatanController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
+    
     public function update(Request $request, Jabatan $jabatan){
         request()->validate([
-            'name' => 'required',
-            'idparentjabatan' => 'required',
+            'jabatan' => 'required',
+            'idparent' => 'required',
             'parentjabatan' => 'required',
             'keterangan' => 'required',
-            'minexp' => 'required',
+            'minimumexperience' => 'required',
         ]);
 
         $jabatan->update($request->all());

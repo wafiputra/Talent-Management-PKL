@@ -33,103 +33,59 @@
                         <table class="table table-striped" id="sortable-table">
                             <thead>
                                 <tr>
-
                                     <th>Nama</th>
-                                    <th>SD</th>
-                                    <th>SMP</th>
-                                    <th>SMA</th>
-                                    <th>Kuliah</th>
+                                    <th>Nama Sekolah</th>
+                                    <th>Jurusan</th>
+                                    <th>Tahun Masuk</th>
+                                    <th>Tahun Lulus</th>
                                     <th class="w-1">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($datapendidikan as $d)
                                 <tr>
                                     <td data-label="Nama">
                                         <div class="d-flex py-1 align-items-center">
                                             <!-- <span class="avatar me-2" style="background-image: url(./static/avatars/010m.jpg)"></span> -->
                                             <div class="flex-fill">
-                                                <div class="font-weight-medium">Thatcher Keel</div>
+                                                <div class="font-weight-medium">{{ $d->idpengguna }}</div>
                                                 <!-- <div class="text-muted"><a href="#" class="text-reset">tkeelf@blogger.com</a></div> -->
                                             </div>
                                         </div>
                                     </td>
-                                    <td data-label="SD">
-
-                                        <div class="font-weight-medium">SD 1 Purwokerto</div>
-                                    </td>
-                                    <td data-label="SMP">
-
-                                        <div class="font-weight-medium">SMP 1 Purwokerto</div>
-                                    </td>
-                                    <td data-label="SMA">
-
-                                        <div class="font-weight-medium">SMA 1 Purwokerto</div>
-                                    </td>
-                                    <td data-label="Kuliah">
-
-                                        <div class="font-weight-medium">IT Telkom Purwokerto </div>
-                                    </td>
-
                                     <td>
+                                        <div class="font-weight-medium">{{ $d->namasekolah }}</div>
+                                    </td>
+                                    <td>
+                                        <div class="font-weight-medium">{{ $d->jurusan }}</div>
+                                    </td>
+                                    <td>
+                                        <div class="font-weight-medium">{{ $d->tahunmasuk }}</div>
+                                    </td>
+                                    <td>
+                                        <div class="font-weight-medium">{{ $d->tahunlulus }}</div>
+                                    </td>
+                                    <td>
+                                        <form action="{{ route('datapendidikan.destroy',$d->id) }}" method="POST">
+                                            @can('datapendidikan-edit')
+                                            <a class="btn btn-primary" href="{{ route('datapendidikan.edit',$d->id) }}">Edit</a>
+                                            @endcan
 
-                                        <div class="btn-list flex-nowrap">
-                                            <a href="#" class="btn btn-success custom-btn">
-                                                <i class="far fa-edit"></i>
-                                            </a>
-                                            <a href="#" class="btn btn-danger custom-btn">
-                                                <i class="far fa-trash-alt"></i>
-                                            </a>
-                                        </div>
+                                            @csrf
+                                            @method('DELETE')
+                                            @can('datapendidikan-delete')
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                            @endcan
+                                        </form>
                                     </td>
                                 </tr>
-
-                                <tr>
-                                    <td data-label="Nama">
-                                        <div class="d-flex py-1 align-items-center">
-                                            <!-- <span class="avatar me-2" style="background-image: url(./static/avatars/010m.jpg)"></span> -->
-                                            <div class="flex-fill">
-                                                <div class="font-weight-medium">Thatcher Keel</div>
-                                                <!-- <div class="text-muted"><a href="#" class="text-reset">tkeelf@blogger.com</a></div> -->
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td data-label="SD">
-
-                                        <div class="font-weight-medium">SD 1 Purwokerto</div>
-                                    </td>
-                                    <td data-label="SMP">
-
-                                        <div class="font-weight-medium">SMP 1 Purwokerto</div>
-                                    </td>
-                                    <td data-label="SMA">
-
-                                        <div class="font-weight-medium">SMA 1 Purwokerto</div>
-                                    </td>
-                                    <td data-label="Kuliah">
-
-                                        <div class="font-weight-medium">IT Telkom Purwokerto </div>
-                                    </td>
-
-                                    <td>
-
-                                        <div class="btn-list flex-nowrap">
-                                            <a href="#" class="btn btn-success custom-btn">
-                                                <i class="far fa-edit"></i>
-                                            </a>
-                                            <a href="#" class="btn btn-danger custom-btn">
-                                                <i class="far fa-trash-alt"></i>
-                                            </a>
-                                        </div>
-                                    </td>
-                                </tr>
-
+                                @endforeach
                             </tbody>
                         </table>
                         <div class="card-footer text-center">
                             <button class="btn btn-primary">Tambah</button>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

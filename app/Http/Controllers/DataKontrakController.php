@@ -27,9 +27,7 @@ class DataKontrakController extends Controller
     public function index()
     {
         $dataKontrak = DataKontrak::latest()->paginate(5);
-        return view('dataKontrak.index');
-        // , compact('bidang')
-        //     ->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('dataKontrak.index', compact('bidang')) ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     // /**
@@ -80,10 +78,10 @@ class DataKontrakController extends Controller
     //  * @param  \App\Bidang  $bidang
     //  * @return \Illuminate\Http\Response
     //  */
-    // public function edit(Bidang  $bidang)
-    // {
-    //     return view('bidang.edit', compact('bidang'));
-    // }
+     public function edit(DataKontrak  $dataKontrak)
+     {
+         return view('dataKontrak.edit', compact('dataKontrak'));
+     }
 
     // /**
     //  * Update the specified resource in storage.
@@ -92,19 +90,19 @@ class DataKontrakController extends Controller
     //  * @param  \App\Bidang  $bidang
     //  * @return \Illuminate\Http\Response
     //  */
-    // public function update(Request $request, Bidang  $bidang)
-    // {
-    //     request()->validate([
-    //         'nama' => 'required',
-    //         'kategori' => 'required',
-    //         'keterangan' => 'required',
-    //     ]);
+     public function update(Request $request, DataKontrak  $dataKontrak)
+     {
+         request()->validate([
+             'nama' => 'required',
+             'kategori' => 'required',
+             'keterangan' => 'required',
+         ]);
 
-    //     $bidang->update($request->all());
+         $bidang->update($request->all());
 
-    //     return redirect()->route('bidang.index')
-    //         ->with('success', 'Bidang updated successfully');
-    // }
+         return redirect()->route('datakontrak.index')
+             ->with('success', 'Data Kontrak updated successfully');
+     }
 
     // /**
     //  * Remove the specified resource from storage.
@@ -112,11 +110,11 @@ class DataKontrakController extends Controller
     //  * @param  \App\Bidang  $bidang
     //  * @return \Illuminate\Http\Response
     //  */
-    // public function destroy(Bidang  $bidang)
-    // {
-    //     $bidang->delete();
+     public function destroy(DataKontrak  $dataKontrak)
+     {
+         $bidang->delete();
 
-    //     return redirect()->route('bidang.index')
-    //         ->with('success', 'Bidang deleted successfully');
-    // }
+         return redirect()->route('bidang.index')
+             ->with('success', 'Bidang deleted successfully');
+     }
 }

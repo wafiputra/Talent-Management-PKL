@@ -59,11 +59,9 @@
                                     <td>{{ $c->project }}</td>
                                     <td>
                                         <form action="{{ route('client.destroy',$c->id) }}" method="POST">
-                                            {{-- <a class="btn btn-info" href="{{ route('client.show',$c->id) }}">Show</a> --}}
                                             @can('client-edit')
                                             <a class="btn btn-primary" href="{{ route('client.edit',$c->id) }}">Edit</a>
                                             @endcan
-
                                             @csrf
                                             @method('DELETE')
                                             @can('client-delete')
