@@ -39,10 +39,7 @@
                     <label>ID Jabatan</label>
                     <select name="idparent" class="form-control">
                         <option>Pilih ID Jabatan</option>
-                        <option value="j1">j1</option>
-                        {{-- @foreach ($idparent as $id => $jabatan)
-                            <option value="{{ $id }}">{{ $jabatan }}</option>
-                        @endforeach --}}
+                        <option value="1">j1</option>
                     </select>
                 </div>
                 <div class="form-group">

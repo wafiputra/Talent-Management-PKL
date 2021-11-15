@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Client;
 use Illuminate\Http\Request;
+use Laravolt\Indonesia\Models\Province;
+use Laravolt\Indonesia\Models\City;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class ClientController extends Controller
 {
@@ -24,7 +28,8 @@ class ClientController extends Controller
 
     public function create()
     {
-        return view('client.create');
+        $provinces = Province::pluck('name', 'id');
+        return view('client.create',compact('provinces'));
     }
     
     public function show(Client $client)
@@ -37,6 +42,13 @@ class ClientController extends Controller
         $client->delete();
         return redirect()->route('client.index')
             ->with('success', 'Client deleted successfully');
+    }
+    public function stor(Request $request)
+    {
+        $cities = City::where('province_id', $request->get('id'))
+            ->pluck('name', 'id');
+
+        return response()->json($cities);
     }
     
     public function edit(Client $client)

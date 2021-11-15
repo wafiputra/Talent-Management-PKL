@@ -1,5 +1,4 @@
 @extends('master')
-
 @section('content')
 <section class="section">
     <div class="section-header">
@@ -37,7 +36,7 @@
                                 <th>Name</th>
                                 <th>Instansi</th>
                                 <th>Alamat</th>
-                                <th>Kecamatan</th>
+                                <th>Kabupaten</th>
                                 <th>Provinsi</th>
                                 <th>Email</th>
                                 <th>No.Telp</th>
@@ -52,7 +51,7 @@
                                     <td>{{ $c->nama }}</td>
                                     <td>{{ $c->instansi }}</td>
                                     <td>{{ $c->alamat }}</td>
-                                    <td>{{ $c->kecamatan }}</td>
+                                    <td>{{ $c->kabupaten }}</td>
                                     <td>{{ $c->provinsi }}</td>
                                     <td>{{ $c->telepon }}</td>
                                     <td>{{ $c->email }}</td>

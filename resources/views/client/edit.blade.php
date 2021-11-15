@@ -12,8 +12,9 @@
 </section>
 <div class="section-body">
     <div class="card">
-        <form action="{{ route("client.edit")}}" method="POST">
+        <form action="{{ route("client.edit",$client->id)}}" method="POST">
             @csrf
+            @method("PUT")
             <div class="card-header">
                 <h4>Edit Data Client</h4>
             </div>
