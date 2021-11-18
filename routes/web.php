@@ -42,3 +42,6 @@ Route::group(['middleware' => ['auth']], function () {
 
 Route::post('users', 'UserController@stor')
     ->name('dependent-dropdown.stor');
+
+Route::post('getData', 'DataPController@getData')
+    ->name('getDataClient');

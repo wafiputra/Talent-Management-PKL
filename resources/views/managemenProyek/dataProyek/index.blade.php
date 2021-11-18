@@ -33,59 +33,78 @@
                         <table class="table table-striped" id="sortable-table">
                             <thead>
                                 <tr>
-
+                                    <th>No</th>
                                     <th>Client</th>
-                                    <th>Instansi</th>
-                                    <th>Nama Projek</th>
-                                    <th>No Telpon</th>
-                                    <th>Email</th>
+                                    <th>Platform</th>
+                                    <th>Tanggal Mulai</th>
+                                    <th>Tanggal Selesai</th>
+                                    <th>Deskripsi</th>
                                     <th class="w-1">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($dataP as $dp)
                                 <tr>
-                                    <td data-label="Client">
+                                    <td data-label="Nomor">
                                         <div class="d-flex py-1 align-items-center">
-                                            <!-- <span class="avatar me-2" style="background-image: url(./static/avatars/010m.jpg)"></span> -->
                                             <div class="flex-fill">
-                                                <div class="font-weight-medium">Thatcher Keel</div>
-                                                <!-- <div class="text-muted"><a href="#" class="text-reset">tkeelf@blogger.com</a></div> -->
+                                                <div class="font-weight-medium">{{ ++$i }}</div>
                                             </div>
                                         </div>
                                     </td>
-                                    <td data-label="Instansi">
 
-                                        <div class="font-weight-medium">Telkom</div>
+                                    <td data-label="Client">
+                                        <div class="d-flex py-1 align-items-center">
+                                            <div class="flex-fill">
+                                                <div class="font-weight-medium">{{ $dp->idClient }}</div>
+                                            </div>
+                                        </div>
                                     </td>
-                                    <td data-label="Nama Projek">
 
-                                        <div class="font-weight-medium">Telkom</div>
+                                    <td data-label="Platform">
+                                        <div class="font-weight-medium">{{ $dp->platform }}</div>
                                     </td>
-                                    <td data-label="No Telpon">
 
-                                        <div class="font-weight-medium">Telkom</div>
+                                    <td data-label="Tanggal Mulai">
+
+                                        <div class="font-weight-medium">{{ $dp->tanggalmulai }}</div>
                                     </td>
-                                    <td data-label="Email">
 
-                                        <div class="font-weight-medium">Telkom</div>
+                                    <td data-label="Tanggal Selesai">
+
+                                        <div class="font-weight-medium">{{ $dp->tanggalselesai }}</div>
+                                    </td>
+
+                                    <td data-label="Deskripsi">
+
+                                        <div class="font-weight-medium">{{ $dp->deskripsi }}</div>
                                     </td>
 
                                     <td>
-
-                                        <div class="btn-list flex-nowrap">
-                                            <a href="#" class="btn btn-success custom-btn">
+                                        <form action="{{ route('dataProyek.destroy',$dp->id) }}" method="POST">
+                                            @can('dataProyek-edit')
+                                            <?php var_dump($dp->id) ?>
+                                            <a class="btn btn-success custom-btn" href="{{ route('dataProyek.edit',$dp->id) }}">
                                                 <i class="far fa-edit"></i>
                                             </a>
-                                            <a href="#" class="btn btn-danger custom-btn">
+                                            @endcan
+                                            @csrf
+                                            @method('DELETE')
+                                            @can('dataProyek-delete')
+                                            <button type="submit" class="btn btn-danger custom-btn">
                                                 <i class="far fa-trash-alt"></i>
-                                            </a>
-                                        </div>
+                                            </button>
+                                            @endcan
+                                        </form>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
                         <div class="card-footer text-center">
-                            <button class="btn btn-primary">Tambah</button>
+                            @can('dataProyek-create')
+                                <a class="btn btn-primary" href="{{ route('dataProyek.create') }}">Tambah</a>
+                            @endcan
                         </div>
                     </div>
 

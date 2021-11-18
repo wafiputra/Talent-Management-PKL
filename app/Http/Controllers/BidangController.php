@@ -81,6 +81,7 @@ class BidangController extends Controller
      */
     public function edit(Bidang  $bidang)
     {
+        // var_dump($bidang->id);
         return view('bidang.edit', compact('bidang'));
     }
 

@@ -36,6 +36,7 @@
                                 <th>No</th>
                                 <th>Talent</th>
                                 <th>Jumlah Target </th>
+                                <th>Waktu Selesai </th>
                                 <th>Batas Waktu</th>
 
                                 <th class="w-1">Action</th>
@@ -52,16 +53,20 @@
                                         </div>
                                     </div>
                                 </td>
-                                <td data-label="Talent">
 
+                                <td data-label="Talent">
                                     <div class="font-weight-medium">Farhan</div>
                                 </td>
-                                <td data-label="Jumlah Target">
 
+                                <td data-label="Jumlah Target">
                                     <div class="font-weight-medium">2</div>
                                 </td>
-                                <td data-label="Batas Waktu">
 
+                                <td data-label="Waktu Selesai">
+                                    <div class="font-weight-medium">5 mei 2020</div>
+                                </td>
+
+                                <td data-label="Batas Waktu">
                                     <div class="font-weight-medium">5 mei 2020</div>
                                 </td>
 

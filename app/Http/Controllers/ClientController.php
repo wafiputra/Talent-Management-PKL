@@ -22,8 +22,8 @@ class ClientController extends Controller
     public function index()
     {
         $client = Client::latest()->paginate(5);
-        return view('client.index', compact('client')) ->with('i', (request()->input('page', 1) - 1) * 5);
-            //echo "test";
+        return view('client.index', compact('client'))->with('i', (request()->input('page', 1) - 1) * 5);
+        //echo "test";
     }
 
     public function create()
@@ -31,7 +31,7 @@ class ClientController extends Controller
         $provinces = Province::pluck('name', 'id');
         return view('client.create',compact('provinces'));
     }
-    
+
     public function show(Client $client)
     {
         return view('client.show', compact('client'));
@@ -43,38 +43,29 @@ class ClientController extends Controller
         return redirect()->route('client.index')
             ->with('success', 'Client deleted successfully');
     }
-    public function stor(Request $request)
-    {
-        $cities = City::where('province_id', $request->get('id'))
-            ->pluck('name', 'id');
-
-        return response()->json($cities);
-    }
-    
     public function edit(Client $client)
     {
         return view('client.edit', compact('client'));
     }
-    
+
     public function store(Request $request)
     {
         request()->validate([
             'nama' => 'required',
             'instansi' => 'required',
             'alamat' => 'required',
-            'kabupaten' => 'required',
             'provinsi' => 'required',
+            'kabupaten' => 'required',
             'telepon' => 'required',
             'email' => 'required',
             'project' => 'required',
         ]);
-        //var_dump($request);
-        Client::create($request->all());// eloquent
+        Client::create($request->all()); // eloquent
 
-        return redirect()->route('client.index')            
-        ->with('success', 'Client created successfully.');
+        return redirect()->route('client.index')
+            ->with('success', 'Client created successfully.');
     }
-    
+
     public function update(Request $request, Client $client)
     {
         request()->validate([
