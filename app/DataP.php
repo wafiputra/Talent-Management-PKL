@@ -9,7 +9,7 @@ class DataP extends Model
     protected $table = 'dataproject';
     protected $fillable = [
         'nama',
-        'nomorkontak',
+        'idClient',
         'platform',
         'tanggalmulai',
         'tanggalselesai',

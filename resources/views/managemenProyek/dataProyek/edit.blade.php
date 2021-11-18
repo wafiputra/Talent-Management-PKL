@@ -1,32 +1,5 @@
 @extends('master')
 @section('content')
-@push('page-scrips')
-<script>
-window.addEventListener('DOMContentLoaded', function() {
-    $(function () {
-        $.ajaxSetup({
-            headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') }
-        });
-
-        $('#client').on('change', function () {
-            $.ajax({
-                url: '{{ route('getDataClient') }}',
-                method: 'POST',
-                data: {id: $(this).val()},
-                success: function (response) {
-                    console.log(response)
-                    document.getElementById("nama").value = response[0].nama;
-                    document.getElementById("instansi").value = response[0].instansi;
-                    document.getElementById("telepon").value = response[0].telepon;
-                    document.getElementById("email").value = response[0].email;
-                    document.getElementById("alamat").value = response[0].alamat;
-                }
-            })
-        });
-    });
-});
-</script>
-@endpush
 
 <section class="section">
     <div class="section-header">
@@ -41,29 +14,14 @@ window.addEventListener('DOMContentLoaded', function() {
     <div class="row">
         <div class=" col-12">
             <div class="card">
-                <form action="{{ route('dataProyek.store') }}" method="POST">
+                {{-- <form action="{{ route('dataProyek.update', $dataP->id) }}" method="POST"> --}}
                     @csrf
+                    @method('PUT')
+
                     <div class="card-header">
-                        <h4>Tambah Data Projek</h4>
+                        <h4>Update Data Projek</h4>
                     </div>
                     <div class="card-body">
-                        <div class="form-group">
-                            <label>Klien</label>
-                            <div class="row">
-                                <div class="col-sm-12 col-md-10">
-                                    <select class="form-control" name="idClient" id="client">
-                                        <option>-- Pilih Klien --</option>
-                                        @foreach($client as $c)
-                                        <option value="{{ $c->id }}">{{ $c->nama }}</option>
-                                        @endforeach
-                                    </select>
-                                </div>
-                                <div class="col-sm-6 col-md-2">
-                                    <a class="btn btn-primary" href="{{ route('client.create') }}">Tambah</a>
-                                </div>
-                            </div>
-
-                        </div>
                         <div class="form-group">
                             <label>Nama Klien</label>
                                 <input type="text" id="nama" class="form-control" readonly>

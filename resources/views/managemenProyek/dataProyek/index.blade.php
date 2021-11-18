@@ -35,7 +35,6 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Client</th>
-                                    <th>No Telpon</th>
                                     <th>Platform</th>
                                     <th>Tanggal Mulai</th>
                                     <th>Tanggal Selesai</th>
@@ -46,7 +45,6 @@
                             <tbody>
                                 @foreach ($dataP as $dp)
                                 <tr>
-
                                     <td data-label="Nomor">
                                         <div class="d-flex py-1 align-items-center">
                                             <div class="flex-fill">
@@ -58,14 +56,9 @@
                                     <td data-label="Client">
                                         <div class="d-flex py-1 align-items-center">
                                             <div class="flex-fill">
-                                                <div class="font-weight-medium">{{ $dp->nama }}</div>
+                                                <div class="font-weight-medium">{{ $dp->idClient }}</div>
                                             </div>
                                         </div>
-                                    </td>
-
-                                    <td data-label="No Telpon">
-
-                                        <div class="font-weight-medium">{{ $dp->nomorkontak }}</div>
                                     </td>
 
                                     <td data-label="Platform">
@@ -90,6 +83,7 @@
                                     <td>
                                         <form action="{{ route('dataProyek.destroy',$dp->id) }}" method="POST">
                                             @can('dataProyek-edit')
+                                            <?php var_dump($dp->id) ?>
                                             <a class="btn btn-success custom-btn" href="{{ route('dataProyek.edit',$dp->id) }}">
                                                 <i class="far fa-edit"></i>
                                             </a>
