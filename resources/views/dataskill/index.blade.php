@@ -94,9 +94,6 @@
 
                                         <div class="font-weight-medium">c#</div>
                                     </td>
-
-
-
                                     <td>
 
                                         <div class="btn-list flex-nowrap">

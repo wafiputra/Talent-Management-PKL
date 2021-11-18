@@ -30,49 +30,106 @@
                                     <div class="card">
                                         <form>
                                             <div class="card-header">
-                                                <h4>Profil</h4>
+                                                <h4>Edit Profil</h4>
                                             </div>
-                                            <!-- <div class="card-body">
+                                            <div class="card-body">
                                                 <div class="form-group">
-                                                    <label>Nama</label>
-                                                    <input type="text" class="form-control" required="">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Tempat Tanggal Lahir</label>
-                                                    <input type="text" class="form-control datepicker">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>Jenis Kelamin</label>
-                                                    <div class="selectgroup selectgroup-pills"><br>
-                                                        <input type="checkbox" id="laki" name="laki" value="laki">
-                                                        <label for="1"> Laki-laki</label>
-                                                        <input type="checkbox" id="perempuan" name="perempuan" value="perempuan">
-                                                        <label for="2"> Perempuan</label>
-                                                        </label>
+                                                    <!-- <label>Nama</label> -->
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            Nama
+                                                        </div>
+                                                        <div class="col-sm-12 col-md-6">
+                                                            <input type="text" class="form-control" required="">
+                                                        </div>
                                                     </div>
                                                 </div>
-                                                <div class="form-group ">
-                                                    <label>Alamat Asal</label>
-                                                    <textarea class="form-control" required=""></textarea>
-                                                </div>
-                                                <div class="form-group ">
-                                                    <label>Alamat Domisili</label>
-                                                    <textarea class="form-control" required=""></textarea>
-                                                </div>
-
                                                 <div class="form-group">
-                                                    <label>No.Telpon</label>
-                                                    <input type="email" class="form-control">
+                                                    <!-- <label>Nama</label> -->
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            Tempat Tanggal Lahir
+                                                        </div>
+                                                        <div class="col-sm-12 col-md-6">
+                                                            <input type="text" class="form-control" required="">
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Email</label>
-                                                    <input type="email" class="form-control" required="">
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            Jenis Kelamin
+                                                        </div>
+                                                        <div class="selectgroup selectgroup-pills"><br>
+                                                            <input type="checkbox" id="laki" name="laki" value="laki">
+                                                            <label for="vehicle1"> laki-laki</label>
+                                                            <input type="checkbox" id="perempuan" name="perempuan" value="perempuan">
+                                                            <label for="vehicle2"> Perempuan</label>
+                                                            </label>
+                                                        </div>
+                                                    </div>
                                                 </div>
-
-                                            </div>
-                                            <div class="card-footer text-center">
-                                                <button class="btn btn-primary">Submit</button>
-                                            </div> -->
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            Agama
+                                                        </div>
+                                                        <div class="col-sm-12 col-md-6">
+                                                            <select class="form-control">
+                                                                <option>Islam</option>
+                                                                <option>Kristen</option>
+                                                                <option>Budha</option>
+                                                                <option>Hindu</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <!-- <label>Nama</label> -->
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            Alamat
+                                                        </div>
+                                                        <div class="col-sm-12 col-md-6">
+                                                            <textarea class="form-control" required=""></textarea>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <!-- <label>Nama</label> -->
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            No.Telephone
+                                                        </div>
+                                                        <div class="col-sm-12 col-md-6">
+                                                            <input type="text" class="form-control" required="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <!-- <label>Nama</label> -->
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            Email
+                                                        </div>
+                                                        <div class="col-sm-12 col-md-6">
+                                                            <input type="email" class="form-control" required="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            Upload Foto
+                                                        </div>
+                                                        <div class="col-sm-6 col-md-6">
+                                                            <div class="custom-file">
+                                                                <input type="file" name="site_logo" class="custom-file-input" id="site-logo">
+                                                                <label class="custom-file-label">Choose File</label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                         </form>
                                     </div>
                                 </div>
