@@ -46,13 +46,12 @@
                             <tr>
                                 <td data-label="Nomor">
                                     <div class="d-flex py-1 align-items-center">
-                                        <!-- <span class="avatar me-2" style="background-image: url(./static/avatars/010m.jpg)"></span> -->
                                         <div class="flex-fill">
                                             <div class="font-weight-medium">{{ ++$i }}</div>
-                                            <!-- <div class="text-muted"><a href="#" class="text-reset">tkeelf@blogger.com</a></div> -->
                                         </div>
                                     </div>
                                 </td>
+
                                 <td data-label="Bidang">
 
                                     <div class="font-weight-medium">{{ $b->nama }}</div>
@@ -84,14 +83,6 @@
                                         </button>
                                         @endcan
                                     </form>
-                                    {{-- <div class="btn-list flex-nowrap">
-                                        <a href="#" class="btn btn-success custom-btn">
-                                            <i class="far fa-edit"></i>
-                                        </a>
-                                        <a href="#" class="btn btn-danger custom-btn">
-                                            <i class="far fa-trash-alt"></i>
-                                        </a>
-                                    </div> --}}
                                 </td>
                             </tr>
                             @endforeach
@@ -101,7 +92,6 @@
                         @can('bidang-create')
                             <a class="btn btn-primary" href="{{ route('bidang.create') }}">Tambah</a>
                         @endcan
-                        {{-- <button class="btn btn-primary"></button> --}}
                     </div>
                 </div>
 

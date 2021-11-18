@@ -37,10 +37,10 @@
                                 <th>Name</th>
                                 <th>Instansi</th>
                                 <th>Alamat</th>
-                                <th>Kecamatan</th>
+                                <th>Kabupaten</th>
                                 <th>Provinsi</th>
-                                <th>Email</th>
                                 <th>No.Telp</th>
+                                <th>Email</th>
                                 <th>Projek</th>
                                 <th class="w-1">Action</th>
                             </tr>
@@ -52,18 +52,19 @@
                                     <td>{{ $c->nama }}</td>
                                     <td>{{ $c->instansi }}</td>
                                     <td>{{ $c->alamat }}</td>
-                                    <td>{{ $c->kecamatan }}</td>
+                                    <td>{{ $c->kabupaten }}</td>
                                     <td>{{ $c->provinsi }}</td>
                                     <td>{{ $c->telepon }}</td>
-                                    <td>{{ $c->Email }}</td>
+                                    <td>{{ $c->email }}</td>
                                     <td>{{ $c->project }}</td>
                                     <td>
                                         <form action="{{ route('client.destroy',$c->id) }}" method="POST">
                                             {{-- <a class="btn btn-info" href="{{ route('client.show',$c->id) }}">Show</a> --}}
                                             @can('client-edit')
-                                            <a class="btn btn-primary" href="{{ route('client.edit',$c->id) }}">Edit</a>
+                                            <a class="btn btn-success custom-btn" href="{{ route('client.edit',$c->id) }}">
+                                                <i class="far fa-edit"></i>
+                                            </a>
                                             @endcan
-
                                             @csrf
                                             @method('DELETE')
                                             @can('client-delete')
@@ -77,7 +78,7 @@
                     </table>
                     <div class="card-footer text-center">
                         @can('client-create')
-                        <a class="btn btn-primary" href="{{ route('client.create') }}"> Create New User</a>
+                        <a class="btn btn-primary" href="{{ route('client.create') }}"> Tambah</a>
                         @endcan
                     </div>
                 </div>
