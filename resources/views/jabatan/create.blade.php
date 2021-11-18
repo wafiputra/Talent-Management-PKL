@@ -1,16 +1,6 @@
 @extends('master')
 
 @section('content')
-    <div class="row">
-        <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>Add New Product</h2>
-            </div>
-            <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('jabatan.index') }}"> Back</a>
-            </div>
-        </div>
-    </div>
     @if ($errors->any())
         <div class="alert alert-danger">
             <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -35,48 +25,43 @@
 </section>
 <div class="section-body">
     <div class="card">
-        <form action="{{ route('jabatan.create')}}" method="POST">
+        <form action="{{ route('jabatan.store') }}" method="POST">
+            @csrf
             <div class="card-header">
                 <h4>Pengisian Data Jabatan</h4>
             </div>
             <div class="card-body">
                 <div class="form-group">
                     <label>Nama</label>
-                    <input type="text" class="form-control" required="">
+                    <input type="text" class="form-control" name="jabatan">
                 </div>
                 <div class="form-group">
                     <label>ID Jabatan</label>
-                    <select class="form-control">
-                        <option>--Pilih ID Jabatan--</option>
-                        <option>A01</option>
-                        <option>A02</option>
-                        <option>B01</option>
+                    <select name="idparent" class="form-control">
+                        <option>Pilih ID Jabatan</option>
+                        <option value="1">j1</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label>ID Parent Jabatan</label>
-                    <select class="form-control">
+                    <select name="parentjabatan" class="form-control">
                         <option>--Pilih ID Parent--</option>
-                        <option>A01</option>
-                        <option>A02</option>
-                        <option>B01</option>
+                        <option value="a1">A01</option>
+                        <option value="a2">A02</option>
+                        <option value="a3">B01</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Parent</label>
-                    <input type="text" class="form-control" disabled>
-                </div>
-                <div class="form-group">
                     <label>Keterangan</label>
-                    <input type="text" class="form-control" required="">
+                    <input type="text" class="form-control" name="keterangan">
                 </div>
                 <div class="form-group">
                     <label>Minimum Experience</label>
-                    <input type="text" class="form-control">
+                    <input type="text" name="minimumexperience" class="form-control">
                 </div>
             </div>
             <div class="card-footer text-center">
-                <button class="btn btn-primary">Submit</button>
+                <button class="btn btn-primary" type="submit">Submit</button>
             </div>
         </form>
     </div>

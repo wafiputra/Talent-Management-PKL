@@ -1,5 +1,4 @@
 @extends('master')
-
 @section('content')
 <section class="section">
     <div class="section-header">
@@ -59,7 +58,6 @@
                                     <td>{{ $c->project }}</td>
                                     <td>
                                         <form action="{{ route('client.destroy',$c->id) }}" method="POST">
-                                            {{-- <a class="btn btn-info" href="{{ route('client.show',$c->id) }}">Show</a> --}}
                                             @can('client-edit')
                                             <a class="btn btn-success custom-btn" href="{{ route('client.edit',$c->id) }}">
                                                 <i class="far fa-edit"></i>

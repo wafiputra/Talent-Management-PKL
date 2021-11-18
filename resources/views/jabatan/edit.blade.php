@@ -34,11 +34,11 @@
             <div class="breadcrumb-item">Form</div>
         </div>
     </div>
-
 </section>
+
 <div class="section-body">
     <div class="card">
-        <form action="{{ route('products.update',$product->id) }}" method="POST">
+        <form action="{{ route('jabatan.update',$jabatan->id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="card-header">
@@ -70,18 +70,14 @@
                         <label for="vehicle2"> 2</label>
                         </label>
                     </div>
-                </div>
-                <div class="form-group">
-                    <label>Parent</label>
-                    <input type="email" class="form-control" value="{{ $jabatan->parent }}">
-                </div>
+                    </div>
                 <div class="form-group">
                     <label>Keterangan</label>
                     <input type="email" class="form-control" required value="{{ $jabatan->keterangan }}">
                 </div>
                 <div class="form-group">
                     <label>Minimum Experience</label>
-                    <input type="email" class="form-control" value="{{ $jabatan->minexp }}">
+                    <input type="email" class="form-control" value="{{ $jabatan->minimumexperience }}">
                 </div>
             </div>
             <div class="card-footer text-center">

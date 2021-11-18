@@ -12,8 +12,9 @@
 </section>
 <div class="section-body">
     <div class="card">
-        <form action="{{ route("client.edit")}}" method="POST">
+        <form action="{{ route("client.edit",$client->id)}}" method="POST">
             @csrf
+            @method("PUT")
             <div class="card-header">
                 <h4>Edit Data Client</h4>
             </div>
@@ -54,7 +55,7 @@
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" value="{{ $client->Email }}" class="form-control" required="">
+                    <input type="email" value="{{ $client->email }}" class="form-control" required="">
                 </div>
                 <div class="form-group">
                     <label>Projek</label>

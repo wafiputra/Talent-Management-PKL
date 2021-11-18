@@ -33,10 +33,10 @@
                     <table class="table table-striped" id="sortable-table">
                         <thead>
                             <tr>
-                                <th>Nama Jabatan</th>
                                 <th>ID Jabatan</th>
+                                <th>Nama Jabatan</th>
                                 <th>ID Parent Jabatan </th>
-                                <th>Parant Jabatan</th>
+                                <th>Parent Jabatan</th>
                                 <th>Keterangan</th>
                                 <th>Experience</th>
                                 <th class="w-1">Action</th>
@@ -45,12 +45,12 @@
                         <tbody>
                             @foreach ($jabatan as $jabatan)
                             <tr>
-                                <td>{{ ++$i }}</td>
-                                <td>{{ $jabatan->nama }}</td>
-                                <td>{{ $jabatan->idparentjabatan }}</td>
+                                <td>{{ $jabatan->id }}</td>
+                                <td>{{ $jabatan->jabatan }}</td>
+                                <td>{{ $jabatan->idparent }}</td>
                                 <td>{{ $jabatan->parentjabatan }}</td>
                                 <td>{{ $jabatan->keterangan }}</td>
-                                <td>{{ $jabatan->minexp }}</td>
+                                <td>{{ $jabatan->minimumexperience }}</td>
                                 <td>
                                     <form action="{{ route('jabatan.destroy',$jabatan->id) }}" method="POST">
                                         <a class="btn btn-info" href="{{ route('jabatan.show',$jabatan->id) }}">Show</a>

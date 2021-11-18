@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Client;
 use Illuminate\Http\Request;
+use Laravolt\Indonesia\Models\Province;
+use Laravolt\Indonesia\Models\City;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class ClientController extends Controller
 {
@@ -24,7 +28,8 @@ class ClientController extends Controller
 
     public function create()
     {
-        return view('client.create');
+        $provinces = Province::pluck('name', 'id');
+        return view('client.create',compact('provinces'));
     }
 
     public function show(Client $client)
@@ -38,7 +43,6 @@ class ClientController extends Controller
         return redirect()->route('client.index')
             ->with('success', 'Client deleted successfully');
     }
-
     public function edit(Client $client)
     {
         return view('client.edit', compact('client'));
@@ -68,10 +72,10 @@ class ClientController extends Controller
             'nama' => 'required',
             'instansi' => 'required',
             'alamat' => 'required',
-            'kecamatan' => 'required',
+            'kabupaten' => 'required',
             'provinsi' => 'required',
             'telepon' => 'required',
-            'Email' => 'required',
+            'email' => 'required',
             'project' => 'required',
         ]);
 

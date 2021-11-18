@@ -1,5 +1,33 @@
 @extends('master')
 @section('content')
+@push('page-scrips')
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+    $(function () {
+        $.ajaxSetup({
+            headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') }
+        });
+        
+        $('#provinsi').on('change', function () {
+            console.log('test')
+            $.ajax({
+                url: '{{ route('dependent-dropdown.stor') }}',
+                method: 'POST',
+                data: {id: $(this).val()},
+                success: function (response) {
+                    $('#city').empty();
+                    // console.log(response)
+                    $.each(response, function (id, name) {
+                        $('#city').append(new Option(name, id))
+                    })
+                }
+            })
+        });
+    });
+});
+</script>
+@endpush
+
 <section class="section">
     <div class="section-header">
         <h1>Form Data</h1>
@@ -32,20 +60,17 @@
                 </div>
                 <div class="form-group">
                     <label>Provinsi</label>
-                    <select class="form-control" name="provinsi">
+                    <select class="form-control" name="provinsi" id="provinsi">
                         <option>Pilih Provinsi</option>
-                        <option value="jateng">Jawa Tengah</option>
-                        <option value="jatim">Jawa Timur</option>
-                        <option value="jabar">Jawa Barat</option>
+                        @foreach ($provinces as $id => $name)
+                            <option value="{{ $id }}">{{ $name }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="form-group">
                     <label>Kabupaten/kota</label>
-                    <select class="form-control" name="kabupaten">
+                    <select class="form-control" name="city" id="city">
                         <option>Pilih kabupaten/Kota</option>
-                        <option value="banyumas">Kab.Banyumas</option>
-                        <option value="tegal">Kab.Tegal</option>
-                        <option value="brebes">Kab.Brebes</option>
                     </select>
                 </div>
                 <div class="form-group">
