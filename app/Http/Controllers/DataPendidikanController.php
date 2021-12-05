@@ -21,9 +21,10 @@ class DataPendidikanController extends Controller
      */
     public function index()
     {
-        $datapendidikan = DataPendidikan::latest()->paginate(5);
-        return view('dataPendidikan.index', compact('datapendidikan'))
-             ->with('i', (request()->input('page', 1) - 1) * 5);
+        // $datapendidikan = DataPendidikan::latest()->paginate(5);
+        // , compact('datapendidikan'))
+        //      ->with('i', (request()->input('page', 1) - 1) * 5
+        return view('dataPendidikan.index');
     }
     public function create()
     {
@@ -57,7 +58,7 @@ class DataPendidikanController extends Controller
             'jurusan' => 'required',
             'tahunmasuk' => 'required',
             'tahunlulus' => 'required',
-            ]);
+        ]);
 
         $datapendidikan->update($request->all());
 

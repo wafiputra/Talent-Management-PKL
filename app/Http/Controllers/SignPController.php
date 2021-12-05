@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\SignP;
+use App\DataP;
 use Illuminate\Http\Request;
 
 class SignPController extends Controller
@@ -26,10 +27,9 @@ class SignPController extends Controller
      */
     public function index()
     {
-        // $bidang = DataP::latest()->paginate(5);
-        return view('signProject.index');
-        // , compact('bidang')
-        //     ->with('i', (request()->input('page', 1) - 1) * 5);
+        $data = DataP::latest()->paginate(5);
+        return view('signProject.index', compact('data'))
+            ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     // /**

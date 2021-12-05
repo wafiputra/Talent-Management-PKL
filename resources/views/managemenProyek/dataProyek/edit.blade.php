@@ -14,7 +14,7 @@
     <div class="row">
         <div class=" col-12">
             <div class="card">
-                {{-- <form action="{{ route('dataProyek.update', $dataP->id) }}" method="POST"> --}}
+                <form action="{{ route('dataProyek.update', $data[0]->id) }}" method="POST">
                     @csrf
                     @method('PUT')
 
@@ -24,24 +24,24 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label>Nama Klien</label>
-                                <input type="text" id="nama" class="form-control" readonly>
+                                <input type="text" id="nama" value="{{ $data[0]->idClient }}" class="form-control" readonly>
                         </div>
                         <div class="form-group">
                             <label>Instansi</label>
-                                <input type="text" id="instansi" class="form-control" readonly>
+                                <input type="text" id="instansi" value="{{ $data[0]->idClient }}" class="form-control" readonly>
                         </div>
                         <div class="form-group">
                             <label>No Telpon</label>
-                                <input type="text" id="telepon" class="form-control" readonly>
+                                <input type="text" id="telepon" value="{{ $data[0]->idClient }}" class="form-control" readonly>
                         </div>
                         <div class="form-group">
                             <label>Email</label>
-                                <input type="email" id="email" class="form-control" readonly>
+                                <input type="email" id="email" value="{{ $data[0]->idClient }}" class="form-control" readonly>
                         </div>
 
                         <div class="form-group ">
                             <label>Alamat</label>
-                            <textarea class="form-control" id="alamat" readonly></textarea>
+                            <textarea class="form-control" placeholder="{{ $data[0]->idClient }}" id="alamat" readonly></textarea>
                         </div>
                         <div class="form-group">
                             <label>Tanggal Mulai - Selesai</label>
@@ -53,7 +53,7 @@
                                                     <i class="fas fa-calendar"></i>
                                                 </div>
                                             </div>
-                                            <input type="text" name="tanggalmulai" class="form-control datepicker">
+                                            <input type="text" name="tanggalmulai" value="{{ $data[0]->tanggalmulai }}" class="form-control datepicker" readonly>
                                         </div>
                                     </div>
 
@@ -64,7 +64,7 @@
                                                     <i class="fas fa-calendar"></i>
                                                 </div>
                                             </div>
-                                            <input type="text" name="tanggalselesai" class="form-control datepicker">
+                                            <input type="text" name="tanggalselesai" value="{{ $data[0]->tanggalselesai }}" class="form-control datepicker">
                                         </div>
                                     </div>
                             </div>
@@ -73,6 +73,19 @@
                             <label>Platform</label>
                             <select class="form-control" name="platform" id="platform">
                                 <option>-- Pilih Platform --</option>
+                                <?php
+                                    if($data[0]->platform == 'Website'){
+                                        echo '<option value="Website" selected>Website</option>';
+                                    }elseif ($data[0]->platform == 'Android') {
+                                        echo '<option value="Android" selected>Android</option>';
+                                    }elseif ($data[0]->platform == 'Desktop') {
+                                        echo '<option value="Desktop" selected>Desktop</option>';
+                                    }elseif ($data[0]->platform == 'IOS') {
+                                        echo '<option value="IOS" selected>IOS</option>';
+                                    }else {
+                                        echo '<option selected>-- Pilih Platform --</option>';
+                                    }
+                                ?>
                                 <option value="Website">Website</option>
                                 <option value="Android">Android</option>
                                 <option value="Desktop">Desktop</option>
@@ -95,11 +108,11 @@
                         </div>
                         <div class="form-group">
                             <label>Nama Projek</label>
-                                <input type="text" name="nama" class="form-control" required="">
+                                <input type="text" name="nama" value="{{ $data[0]->nama }}" class="form-control" required="">
                         </div>
                         <div class="form-group">
                             <label>Deskripsi</label>
-                                <input type="text" name="deskripsi" class="form-control" required="">
+                                <input type="text" name="deskripsi" value="{{ $data[0]->deskripsi }}" class="form-control" required="">
                         </div>
                         <div class="card-footer text-center">
                             <button type="submit" class="btn btn-primary">Submit</button>

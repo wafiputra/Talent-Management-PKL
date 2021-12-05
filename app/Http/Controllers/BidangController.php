@@ -102,6 +102,8 @@ class BidangController extends Controller
 
         $bidang->update($request->all());
 
+        dd($request->id);
+
         return redirect()->route('bidang.index')
             ->with('success', 'Bidang updated successfully');
     }

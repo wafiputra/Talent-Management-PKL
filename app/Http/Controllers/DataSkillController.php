@@ -20,15 +20,16 @@ class DataSkillController extends Controller
      */
     public function index()
     {
-        $dataskill = DataSkill::latest()->paginate(5);
-        return view('dataSkill.index',compact('dataSkill'))
-        ->with('i', (request()->input('page', 1) - 1) * 5);
+        // $dataskill = DataSkill::latest()->paginate(5);
+        // ,compact('dataSkill'))
+        // ->with('i', (request()->input('page', 1) - 1) * 5
+        return view('dataSkill.index');
     }
     public function create()
     {
         return view('dataSkill.create');
     }
-    
+
     public function show(DataSkill $dataskill)
     {
         return view('dataSkill.show', compact('dataSkill'));
@@ -44,7 +45,7 @@ class DataSkillController extends Controller
     {
         return view('dataSkill.edit', compact('dataSkill'));
     }
-    
+
     public function store(Request $request)
     {
         request()->validate([
@@ -53,12 +54,12 @@ class DataSkillController extends Controller
             'deskripsi' => 'required',
         ]);
         //var_dump($request);
-        DataSkill::create($request->all());// eloquent
+        DataSkill::create($request->all()); // eloquent
 
-        return redirect()->route('dataSkill.index')            
-        ->with('success', 'Data Skills Created Successfully.');
+        return redirect()->route('dataSkill.index')
+            ->with('success', 'Data Skills Created Successfully.');
     }
-    
+
     public function update(Request $request, DataSkill $dataskill)
     {
         request()->validate([

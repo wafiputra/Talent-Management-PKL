@@ -42,31 +42,31 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($datapendidikan as $d)
+                                {{-- @foreach ($datapendidikan as $d) --}}
                                 <tr>
                                     <td data-label="Nama">
                                         <div class="d-flex py-1 align-items-center">
                                             <!-- <span class="avatar me-2" style="background-image: url(./static/avatars/010m.jpg)"></span> -->
                                             <div class="flex-fill">
-                                                <div class="font-weight-medium">{{ $d->idpengguna }}</div>
+                                                {{-- <div class="font-weight-medium">{{ $d->idpengguna }}</div> --}}
                                                 <!-- <div class="text-muted"><a href="#" class="text-reset">tkeelf@blogger.com</a></div> -->
                                             </div>
                                         </div>
                                     </td>
                                     <td>
-                                        <div class="font-weight-medium">{{ $d->namasekolah }}</div>
+                                        {{-- <div class="font-weight-medium">{{ $d->namasekolah }}</div> --}}
                                     </td>
                                     <td>
-                                        <div class="font-weight-medium">{{ $d->jurusan }}</div>
+                                        {{-- <div class="font-weight-medium">{{ $d->jurusan }}</div> --}}
                                     </td>
                                     <td>
-                                        <div class="font-weight-medium">{{ $d->tahunmasuk }}</div>
+                                        {{-- <div class="font-weight-medium">{{ $d->tahunmasuk }}</div> --}}
                                     </td>
                                     <td>
-                                        <div class="font-weight-medium">{{ $d->tahunlulus }}</div>
+                                        {{-- <div class="font-weight-medium">{{ $d->tahunlulus }}</div> --}}
                                     </td>
                                     <td>
-                                        <form action="{{ route('datapendidikan.destroy',$d->id) }}" method="POST">
+                                        {{-- <form action="{{ route('datapendidikan.destroy',$d->id) }}" method="POST">
                                             @can('datapendidikan-edit')
                                             <a class="btn btn-primary" href="{{ route('datapendidikan.edit',$d->id) }}">Edit</a>
                                             @endcan
@@ -76,10 +76,10 @@
                                             @can('datapendidikan-delete')
                                             <button type="submit" class="btn btn-danger">Delete</button>
                                             @endcan
-                                        </form>
+                                        </form> --}}
                                     </td>
                                 </tr>
-                                @endforeach
+                                {{-- @endforeach --}}
                             </tbody>
                         </table>
                         <div class="card-footer text-center">

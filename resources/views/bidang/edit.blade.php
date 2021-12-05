@@ -14,7 +14,6 @@
 </section>
 <div class="section-body">
     <div class="card">
-        <?php var_dump(['id'=>$bidang->id]) ?>
         <form action="{{ route('bidang.update',$bidang->id) }}" method="POST">
             @csrf
             @method('PUT')

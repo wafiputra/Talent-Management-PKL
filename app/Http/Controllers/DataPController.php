@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\DataP;
 use App\Client;
 use Illuminate\Http\Request;
-// use Illuminate\Support\Facades\DB;
 
 class DataPController extends Controller
 {
@@ -85,10 +84,11 @@ class DataPController extends Controller
      * @param  \App\DataP $dataP
      * @return \Illuminate\Http\Response
      */
-    public function edit(DataP $dataP)
+    public function edit($dataP)
     {
-        var_dump($dataP->nama);
-        // return view('managemenProyek.dataProyek.edit', compact('dataP'));
+        // var_dump($dataP);
+        $data = DataP::get()->where('id', $dataP);
+        return view('managemenProyek.dataProyek.edit', compact('data'));
         //
     }
 
@@ -99,7 +99,7 @@ class DataPController extends Controller
      * @param  \App\DataP $dataP
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, DataP $dataP)
+    public function update(Request $request, DataP $data)
     {
         request()->validate([
             'nama' => 'required',
@@ -108,7 +108,19 @@ class DataPController extends Controller
             'deskripsi' => 'required',
         ]);
 
-        $dataP->update($request->only('nama', 'tanggalselesai', 'platform', 'deskripsi'));
+        // $nama = $request->nama;
+        // $tglSelesai = $request->tanggalselesai;
+        // $platform = $request->platform;
+        // $deskripsi = $request->deskripsi;
+
+        // $data->update([
+        //     'nama' => $nama,
+        //     'tanggalselesai' => $tglSelesai,
+        //     'platform' => $platform,
+        //     'deskripsi' => $deskripsi
+        // ]);
+        $data->update($request->all());
+        dd($request->deskripsi, $request->tanggalselesai, $request->id);
 
         return redirect()->route('dataProyek.index')
             ->with('success', 'Project Data updated successfully');

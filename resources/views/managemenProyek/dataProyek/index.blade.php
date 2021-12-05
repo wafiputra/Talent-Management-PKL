@@ -35,6 +35,7 @@
                                 <tr>
                                     <th>No</th>
                                     <th>Client</th>
+                                    <th>Nama</th>
                                     <th>Platform</th>
                                     <th>Tanggal Mulai</th>
                                     <th>Tanggal Selesai</th>
@@ -61,12 +62,15 @@
                                         </div>
                                     </td>
 
+                                    <td data-label="nama">
+                                        <div class="font-weight-medium">{{ $dp->nama }}</div>
+                                    </td>
+
                                     <td data-label="Platform">
                                         <div class="font-weight-medium">{{ $dp->platform }}</div>
                                     </td>
 
                                     <td data-label="Tanggal Mulai">
-
                                         <div class="font-weight-medium">{{ $dp->tanggalmulai }}</div>
                                     </td>
 
@@ -83,9 +87,9 @@
                                     <td>
                                         <form action="{{ route('dataProyek.destroy',$dp->id) }}" method="POST">
                                             @can('dataProyek-edit')
-                                            <?php var_dump($dp->id) ?>
+
                                             <a class="btn btn-success custom-btn" href="{{ route('dataProyek.edit',$dp->id) }}">
-                                                <i class="far fa-edit"></i>
+                                                <i class="far fa-edit"><?php var_dump($dp->id) ?></i>
                                             </a>
                                             @endcan
                                             @csrf
