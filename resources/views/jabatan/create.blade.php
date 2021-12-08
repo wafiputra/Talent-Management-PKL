@@ -37,19 +37,21 @@
                 </div>
                 <div class="form-group">
                     <label>ID Jabatan</label>
-                    <select name="idparent" class="form-control">
+                    <input type="text" class="form-control" name="idparent">
+                    {{-- <select name="idparent" class="form-control">
                         <option>Pilih ID Jabatan</option>
                         <option value="1">j1</option>
-                    </select>
+                    </select> --}}
                 </div>
                 <div class="form-group">
                     <label>ID Parent Jabatan</label>
-                    <select name="parentjabatan" class="form-control">
+                    <input type="text" class="form-control" name="parentjabatan">
+                    {{-- <select name="parentjabatan" class="form-control"> 
                         <option>--Pilih ID Parent--</option>
                         <option value="a1">A01</option>
                         <option value="a2">A02</option>
                         <option value="a3">B01</option>
-                    </select>
+                    </select>--}}
                 </div>
                 <div class="form-group">
                     <label>Keterangan</label>

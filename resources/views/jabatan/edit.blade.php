@@ -1,18 +1,5 @@
-@extends('layouts.app')
+@extends('master')
 @section('content')
-
-<div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
-            <h2>Edit jabatan</h2>
-        </div>
-        <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('jabatan.index') }}"> Back</a>
-        </div>
-    </div>
-</div>
-
-
 @if ($errors->any())
     <div class="alert alert-danger">
         <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -47,11 +34,12 @@
             <div class="card-body">
                 <div class="form-group">
                     <label>Name</label>
-                    <input type="text" class="form-control" value="{{ $jabatan->nama }}" required>
+                    <input type="text" class="form-control" name="jabatan" value="{{ $jabatan->jabatan }}" required>
                 </div>
                 <div class="form-group">
                     <label>ID Jabatan</label>
-                    <div class="selectgroup selectgroup-pills"><br>
+                    <input type="text" class="form-control" name="idparent" value="{{ $jabatan->idparent }}" required>
+                    {{-- <div class="selectgroup selectgroup-pills"><br> 
                         <input type="checkbox" id="1" name="1" value="1">
                         <span class="checkbox1"></span>
                         <label for="vehicle1"> 1</label>
@@ -59,25 +47,26 @@
                         <span class="checkbox2"></span>
                         <label for="vehicle2"> 2</label>
                         </label>
-                    </div>
+                    </div>--}}
                 </div>
                 <div class="form-group">
                     <label>ID Parent Jabatan</label>
-                    <div class="selectgroup selectgroup-pills"><br>
+                    <input type="text" class="form-control" name="parentjabatan" value="{{ $jabatan->parentjabatan }}" required>                    
+                    {{-- <div class="selectgroup selectgroup-pills"><br>
                         <input type="checkbox" id="1" name="1" value="1">
                         <label for="vehicle1"> 1</label>
                         <input type="checkbox" id="2" name="2" value="2">
                         <label for="vehicle2"> 2</label>
                         </label>
-                    </div>
+                    </div> --}}
                     </div>
                 <div class="form-group">
                     <label>Keterangan</label>
-                    <input type="email" class="form-control" required value="{{ $jabatan->keterangan }}">
+                    <input type="text"  class="form-control" name="keterangan" required value="{{ $jabatan->keterangan }}">
                 </div>
                 <div class="form-group">
                     <label>Minimum Experience</label>
-                    <input type="email" class="form-control" value="{{ $jabatan->minimumexperience }}">
+                    <input type="text" class="form-control" name="minimumexperience" value="{{ $jabatan->minimumexperience }}">
                 </div>
             </div>
             <div class="card-footer text-center">

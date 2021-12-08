@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\DataSkill;
 
 class DataSkillController extends Controller
 {
@@ -21,7 +22,7 @@ class DataSkillController extends Controller
     public function index()
     {
         $dataskill = DataSkill::latest()->paginate(5);
-        return view('dataSkill.index',compact('dataSkill'))
+        return view('dataSkill.index',compact('dataskill'))
         ->with('i', (request()->input('page', 1) - 1) * 5);
     }
     public function create()
@@ -31,10 +32,10 @@ class DataSkillController extends Controller
     
     public function show(DataSkill $dataskill)
     {
-        return view('dataSkill.show', compact('dataSkill'));
+        return view('dataSkill.show', compact('dataskill'));
     }
 
-    public function destroy(DataSkill $dataskill)
+      public function destroy(DataSkill $dataskill)
     {
         $dataskill->delete();
         return redirect()->route('dataSkill.index')
@@ -42,7 +43,7 @@ class DataSkillController extends Controller
     }
     public function edit(DataSkill $dataskill)
     {
-        return view('dataSkill.edit', compact('dataSkill'));
+        return view('dataSkill.edit', compact('dataskill'));
     }
     
     public function store(Request $request)

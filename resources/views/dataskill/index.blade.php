@@ -60,9 +60,6 @@
 
                                         <div class="font-weight-medium">java</div>
                                     </td>
-
-
-
                                     <td>
 
                                         <div class="btn-list flex-nowrap">

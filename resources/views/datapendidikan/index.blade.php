@@ -66,14 +66,14 @@
                                         <div class="font-weight-medium">{{ $d->tahunlulus }}</div>
                                     </td>
                                     <td>
-                                        <form action="{{ route('datapendidikan.destroy',$d->id) }}" method="POST">
-                                            @can('datapendidikan-edit')
-                                            <a class="btn btn-primary" href="{{ route('datapendidikan.edit',$d->id) }}">Edit</a>
+                                        <form action="{{ route('dataPendidikan.destroy',$d->id) }}" method="POST">
+                                            @can('dataPendidikan-edit')
+                                            <a class="btn btn-primary" href="{{ route('dataPendidikan.edit',$d->id) }}">Edit</a>
                                             @endcan
 
                                             @csrf
                                             @method('DELETE')
-                                            @can('datapendidikan-delete')
+                                            @can('dataPendidikan-delete')
                                             <button type="submit" class="btn btn-danger">Delete</button>
                                             @endcan
                                         </form>
@@ -83,7 +83,7 @@
                             </tbody>
                         </table>
                         <div class="card-footer text-center">
-                            <button class="btn btn-primary">Tambah</button>
+                            <a class="btn btn-primary" href="{{ route('dataPendidikan.create') }}"> Tambah</a>
                         </div>
                     </div>
                 </div>

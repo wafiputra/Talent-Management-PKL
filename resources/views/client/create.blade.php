@@ -69,7 +69,7 @@ window.addEventListener('DOMContentLoaded', function() {
                 </div>
                 <div class="form-group">
                     <label>Kabupaten/kota</label>
-                    <select class="form-control" name="city" id="city">
+                    <select class="form-control" name="kabupaten" id="city">
                         <option>Pilih kabupaten/Kota</option>
                     </select>
                 </div>

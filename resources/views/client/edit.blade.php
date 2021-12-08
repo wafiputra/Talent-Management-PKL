@@ -1,5 +1,32 @@
 @extends('master')
 @section('content')
+@push('page-scrips')
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+    $(function () {
+        $.ajaxSetup({
+            headers: { 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') }
+        });
+        
+        $('#provinsi').on('change', function () {
+            console.log('test')
+            $.ajax({
+                url: '{{ route('dependent-dropdown.stor') }}',
+                method: 'POST',
+                data: {id: $(this).val()},
+                success: function (response) {
+                    $('#kabupaten').empty();
+                    // console.log(response)
+                    $.each(response, function (id, name) {
+                        $('#kabupaten').append(new Option(name, id))
+                    })
+                }
+            })
+        });
+    });
+});
+</script>
+@endpush
 <section class="section">
     <div class="section-header">
         <h1>Form Data</h1>
@@ -12,7 +39,7 @@
 </section>
 <div class="section-body">
     <div class="card">
-        <form action="{{ route("client.edit",$client->id)}}" method="POST">
+        <form action="{{ route("client.update",$client->id)}}" method="POST">
             @csrf
             @method("PUT")
             <div class="card-header">
@@ -21,45 +48,48 @@
             <div class="card-body">
                 <div class="form-group">
                     <label>Name</label>
-                    <input type="text" value="{{ $client->nama }}"class="form-control" required="">
+                    <input type="text" name="nama" value="{{ $client->nama }}"class="form-control" required="">
                 </div>
                 <div class="form-group">
                     <label>Instansi</label>
-                    <input type="text" value="{{ $client->instansi }}" class="form-control" required="">
+                    <input type="text" name="instansi" value="{{ $client->instansi }}" class="form-control" required="">
                 </div>
                 <div class="form-group mb-0">
                     <label>Alamat</label>
-                    <textarea class="form-control" value="{{ $client->alamat }}" required=""></textarea>
+                    <textarea class="form-control" name="alamat" placeholder="{{ $client->alamat }}" required=""></textarea>
                 </div>
+
                 <div class="form-group">
-                    <label>Kabupaten/kota</label>
-                    <select class="form-control">
-                        <option>Pilih kabupaten/Kota</option>
-                        <option>Kab.Banyumas</option>
-                        <option>Kab.Tegal</option>
-                        <option>Kab.Brebes</option>
+                    <label>Provinsi</label>
+                    <select class="form-control" name="provinsi" id="provinsi">
+                        <option>Pilih Provinsi</option>
+                        @foreach ($provinces as $id => $name)
+                        <?php
+                            if($client->provinsi == $id){
+                                echo '<option value="'.$id.'" selected>'.$name.'</option>';
+                            }
+                        ?>
+                            <option value="{{ $id }}">{{ $name }}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Provinsi</label>
-                    <select class="form-control">
-                        <option>Pilih Provinsi</option>
-                        <option>Jawa Tengah</option>
-                        <option>Jawa Timur</option>
-                        <option>Jawa Barat</option>
+                    <label>Kabupaten/kota</label>
+                    <select class="form-control" name="kabupaten" id="kabupaten">
+                        <option>Pilih kabupaten/Kota</option>
                     </select>
                 </div>
                 <div class="form-group">
                     <label>No.Telpon</label>
-                    <input type="text" value="{{ $client->telepon }}" class="form-control">
+                    <input type="text" name="telepon" value="{{ $client->telepon }}" class="form-control">
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" value="{{ $client->email }}" class="form-control" required="">
+                    <input type="email" name="email"value="{{ $client->email }}" class="form-control" required="">
                 </div>
                 <div class="form-group">
                     <label>Projek</label>
-                    <input type="text" value="{{ $client->project }}" class="form-control">
+                    <input type="text" name="project"value="{{ $client->project }}" class="form-control">
                 </div>
             </div>
             <div class="card-footer text-center">

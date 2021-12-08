@@ -71,4 +71,8 @@ class DataPendidikanController extends Controller
         return redirect()->route('dataPendidikan.index')
             ->with('success', 'Bidang deleted successfully');
     }
+    public function edit(DataPendidikan $datapendidikan)
+    {
+        return view('dataPendidikan.edit', compact('client'));
+    }
 }

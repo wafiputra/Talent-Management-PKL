@@ -45,7 +45,8 @@ class ClientController extends Controller
     }
     public function edit(Client $client)
     {
-        return view('client.edit', compact('client'));
+        $provinces = Province::pluck('name', 'id');
+        return view('client.edit', compact('client','provinces'));
     }
 
     public function store(Request $request)
