@@ -37,10 +37,13 @@ class SignPController extends Controller
     //  *
     //  * @return \Illuminate\Http\Response
     //  */
-    // public function create()
-    // {
-    //     return view('bidang.create');
-    // }
+    public function create()
+    {
+        // dd($dataP->id);
+        // $data = DataP::get()->where('id', $dataP);
+        // dd($data);
+        return view('signProject.create');
+    }
 
     // /**
     //  * Store a newly created resource in storage.
@@ -48,20 +51,20 @@ class SignPController extends Controller
     //  * @param  \Illuminate\Http\Request  $request
     //  * @return \Illuminate\Http\Response
     //  */
-    // public function store(Request $request)
-    // {
-    //     request()->validate([
-    //         'nama' => 'required',
-    //         'kategori' => 'required',
-    //         'keterangan' => 'required',
-    //     ]);
+    public function store(Request $request)
+    {
+        request()->validate([
+            'nama' => 'required',
+            'kategori' => 'required',
+            'keterangan' => 'required',
+        ]);
 
-    //     Bidang::create($request->all());
-    //     // Alamat::create($request->);
+        Bidang::create($request->all());
+        // Alamat::create($request->);
 
-    //     return redirect()->route('bidang.index')
-    //         ->with('success', 'Bidang created successfully.');
-    // }
+        return redirect()->route('bidang.index')
+            ->with('success', 'Bidang created successfully.');
+    }
 
     // /**
     //  * Display the specified resource.

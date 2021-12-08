@@ -15,8 +15,9 @@ class CreateDataskillTable extends Migration
     {
         Schema::create('dataskill', function (Blueprint $table) {
             $table->id();
+            $table->string("idPengguna");
             $table->string("platform");
-            $table->string("bahasapemrograman");
+            $table->string("bahasaPemrograman");
             $table->string("deskripsi");
             $table->timestamps();
         });

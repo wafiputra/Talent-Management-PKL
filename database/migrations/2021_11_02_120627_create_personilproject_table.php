@@ -15,8 +15,8 @@ class CreatePersonilprojectTable extends Migration
     {
         Schema::create('personilproject', function (Blueprint $table) {
             $table->id();
-            $table->string('idproject');
-            $table->string('idpengguna');
+            $table->string('idProject');
+            $table->string('idPengguna');
             $table->timestamps();
         });
     }

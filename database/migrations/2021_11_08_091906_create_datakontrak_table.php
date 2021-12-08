@@ -8,14 +8,14 @@ class CreateDatakontrakTable extends Migration
 {
     /**
      * Run the migrations.
-     * 
+     *
      * @return void
      */
     public function up()
     {
         Schema::create('datakontrak', function (Blueprint $table) {
             $table->id();
-            $table->string("idpengguna");
+            $table->string("idPengguna");
             $table->string("dokumen");
             $table->date("tanggalmulai");
             $table->date("tanggalselesai");

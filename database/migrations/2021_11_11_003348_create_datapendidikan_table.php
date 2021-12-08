@@ -15,11 +15,11 @@ class CreateDatapendidikanTable extends Migration
     {
         Schema::create('datapendidikan', function (Blueprint $table) {
             $table->id();
-            $table->string("idpengguna");
-            $table->string("namasekolah");
+            $table->string("idPengguna");
+            $table->string("namaSekolah");
             $table->string("jurusan");
-            $table->string("tahunmasuk");
-            $table->string("tahunlulus");
+            $table->string("tahunMasuk");
+            $table->string("tahunLulus");
             $table->timestamps();
         });
     }

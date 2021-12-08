@@ -17,6 +17,7 @@
         <div class="card">
             <div class="card-header">
                 <h4>Table Sign Projek</h4>
+
                 <div class="card-header-action">
                     <form>
                         <div class="input-group">
@@ -28,52 +29,43 @@
                     </form>
                 </div>
             </div>
+            <h5> Nama Projek = {{$data->nama}} </h5>
             <div class="card-body p-0">
                 <div class="table-responsive">
                     <table class="table table-striped" id="sortable-table">
                         <thead>
                             <tr>
                                 <th>No</th>
-                                <th>Client</th>
-                                <th>Nama Projek</th>
-                                <th>Tanggal mulai</th>
-                                <th>Tanggal selesai</th>
+                                <th>Nama Talent</th>
+                                <th>Jabatan</th>
                                 <th class="w-1">Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($data as $d)
+                            {{-- @foreach ($data as $d) --}}
                             <tr>
                                 <td data-label="Nomor">
                                     <div class="d-flex py-1 align-items-center">
                                         <div class="flex-fill">
-                                            <div class="font-weight-medium">{{ ++$i }}</div>
+                                            <div class="font-weight-medium">1</div>
                                         </div>
                                     </div>
                                 </td>
-                                <td data-label="Client">
+                                <td data-label="Nama Talent">
                                     <div class="d-flex py-1 align-items-center">
                                         <div class="flex-fill">
-                                            <div class="font-weight-medium">{{$d->idClient}}</div>
+                                            <div class="font-weight-medium">Talent</div>
                                         </div>
                                     </div>
                                 </td>
-                                <td data-label="Nama">
+                                <td data-label="Jabatan">
 
-                                    <div class="font-weight-medium">{{$d->nama}}</div>
-                                </td>
-                                <td data-label="Tanggal Mulai">
-
-                                    <div class="font-weight-medium">{{$d->tanggalmulai}}</div>
-                                </td>
-                                <td data-label="Tanggal Mulai">
-
-                                    <div class="font-weight-medium">{{$d->tanggalselesai}}</div>
+                                    <div class="font-weight-medium">Jabatan</div>
                                 </td>
 
                                 <td>
                                     <div class="btn-list flex-nowrap">
-                                        <a href="{{ route('signProject.show',$d->id) }}" class="btn btn-primary custom-btn">
+                                        <a href="{{ route('signProject.create', ) }}" class="btn btn-primary custom-btn">
                                             <i class="fas fa-plus"></i>
                                         </a>
                                         <a href="#" class="btn btn-success custom-btn">
@@ -85,7 +77,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            @endforeach
+                            {{-- @endforeach --}}
                         </tbody>
                     </table>
                 </div>

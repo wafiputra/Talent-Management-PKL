@@ -15,14 +15,14 @@ class CreateDatapenggunaTable extends Migration
     {
         Schema::create('datapengguna', function (Blueprint $table) {
             $table->id();
-            $table->string("iduser");
-            $table->string("tempatlahhir");
-            $table->date("tanggallahir");
-            $table->string("jeniskelamin");
+            $table->string("idUser");
+            $table->string("tempatLahir");
+            $table->date("tanggalLahir");
+            $table->string("jenisKelamin");
             $table->string("jabatan");
-            $table->string("alamatasal");
-            $table->string("alamatdomisili");
-            $table->string("nomortelepon");
+            $table->string("alamatAsal");
+            $table->string("alamatDomisili");
+            $table->string("telepon");
             $table->timestamps();
         });
     }
